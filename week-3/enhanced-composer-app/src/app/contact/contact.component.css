@@ -1,0 +1,21 @@
+.mail-header {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.mail-container {
+  text-align: center;
+}
+
+.bi-mailbox,
+.bi-phone {
+  font-size: 8em;
+}
+
+.phone-container {
+  text-align: center;
+}
+
+.width-75 {
+  width: 75%;
+}

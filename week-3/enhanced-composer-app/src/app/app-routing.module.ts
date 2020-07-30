@@ -1,3 +1,14 @@
+/*
+============================================
+Title: app-routing.module.ts
+Author: Professor Krasso
+Date: 30 July 2020
+Modified by: Angel Padilla
+Description: application routing module
+============================================
+*/
+
+
 import { ComposerDetailsComponent } from './composer-details/composer-details.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';

@@ -1,4 +1,3 @@
-import { ComposerService } from './../composer.service';
 /*
 ============================================
 Title: composer.component.ts
@@ -11,6 +10,7 @@ Description: Generates table with composers from the composer service and using 
 
 import { Component, OnInit } from '@angular/core';
 import { IComposer } from './../composer.interface';
+import { ComposerService } from './../composer.service';
 
 @Component({
   selector: 'app-composer-list',

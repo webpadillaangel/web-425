@@ -2,7 +2,7 @@
 ============================================
 Title: contact.component.ts
 Author: Professor Krasso
-Date: 19 July 2020
+Date: 30 July 2020
 Modified by: Angel Padilla
 Description: Generates the about page - contact information on how to contact the composer chosen.
 ============================================

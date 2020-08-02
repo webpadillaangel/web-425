@@ -1,9 +1,9 @@
 /*
 ============================================
 Title: composer.service.ts
-Author: Professor Krasso
+Author: Angel Padilla
 Date: 2 August 2020
-Modified by: Angel Padilla
+Modified by:
 Description: Composer service provides the composer information and two methods to components that user this service.
 ============================================
 */

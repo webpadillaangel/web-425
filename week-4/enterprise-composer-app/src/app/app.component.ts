@@ -1,10 +1,10 @@
 /*
 ============================================
-Title: app.component.ts
-Author: Professor Krasso
-Date: 2 August 2020
-Modified by: Angel Padilla
-Description: app component - main component
+; Title: app.component.ts
+; Author: Angel Padilla
+; Date: 2 August 2020
+; Modified by:
+; Description: app component - main component
 ============================================
 */
 

@@ -1,10 +1,10 @@
 /*
 ============================================
-Title: app-routing.module.ts
-Author: Professor Krasso
-Date: 2 August 2020
-Modified by: Angel Padilla
-Description: application routing module
+; Title: app-routing.module.ts
+; Author: Angel Padilla
+; Date: 2 August 2020
+; Modified by:
+; Description: application routing module
 ============================================
 */
 

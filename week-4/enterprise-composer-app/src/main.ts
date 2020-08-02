@@ -1,9 +1,9 @@
 /*
 ============================================
 ; Title: main.ts
-; Author: Professor Krasso
+; Author: Angel Padilla
 ; Date: 2 August 2020
-; Modified By: Angel Padilla
+; Modified By:
 ; Description: main.ts file is the first(main) entry point of the app.
 ;===========================================
 */

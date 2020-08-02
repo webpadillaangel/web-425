@@ -1,11 +1,11 @@
 
 /*
 ============================================
-Title: composer.component.ts
-Author: Professor Krasso
-Date: 2 August 2020
-Modified by: Angel Padilla
-Description: Gets the router parameter being the composer id when the component is initialized. Uses the composer service to retrieve composer information
+; Title: composer.component.ts
+; Author: Angel Padilla
+; Date: 2 August 2020
+; Modified by:
+; Description: Gets the router parameter being the composer id when the component is initialized. Uses the composer service to retrieve composer information
 ============================================
 */
 

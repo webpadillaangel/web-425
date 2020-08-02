@@ -1,10 +1,10 @@
 import { RouterModule } from '@angular/router';
 /*
 ============================================
-Title: app.module.ts
-Author: Professor Krasso
-Date: 2 August 2020
-Modified by: Angel Padilla
+; Title: app.module.ts
+; Author: Angel Padilla
+; Date: 2 August 2020
+; Modified by:
 ; Description: This is the root module of the application, this contains all the components that go with this module.
 ============================================
 */

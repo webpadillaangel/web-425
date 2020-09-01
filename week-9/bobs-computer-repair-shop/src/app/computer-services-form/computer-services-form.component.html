@@ -1,0 +1,58 @@
+<mat-card>
+  <mat-card-title class="services-title">
+    Please select the service(s) you would like.
+  </mat-card-title>
+
+  <mat-card-content>
+    <form fxLayout="row" [formGroup]="repairForm" >
+      <div class="repair-services-section" fxFlexFill>
+        <mat-list
+          formArrayName="repairOptions"
+          *ngFor="let item of repairFormArray.controls; let i = index"
+        >
+          <mat-list-item class="material-item">
+            <div fxFlex fxFlexFill fxLayoutAlign="space-between center">
+              <div>
+                <mat-label>
+                  <mat-checkbox
+                    [formControlName]="i"
+                    color="accent"
+                  ></mat-checkbox>
+                  {{ servicesList[i].serviceName }}
+                </mat-label>
+              </div>
+
+              <div>
+                {{ servicesList[i].price | currency }}
+              </div>
+
+            </div>
+
+          </mat-list-item>
+
+          <mat-divider></mat-divider>
+
+        </mat-list>
+        <!-- <mat-label
+              formArrayName="repairOptions"
+              *ngFor="let item of repairFormArray.controls; let i = index"
+            >
+              <mat-checkbox [formControlName]="i" color="primary"></mat-checkbox>
+              {{ servicesList[i].serviceName }}
+            </mat-label> -->
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<!-- <form fxLayout="column">
+  <section class="example-section">
+    <mat-checkbox class="example-margin" color="primary">Password Reset</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary">Spyware Removal</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary">RAM Upgrades Removal</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary">Software Installation</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary">Computer Tune-Up</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary">Keyboard Cleaning</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary">Computer Disk Clean-Up</mat-checkbox>
+  </section>
+</form> -->

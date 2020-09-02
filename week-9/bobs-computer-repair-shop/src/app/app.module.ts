@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -19,6 +20,8 @@ import { ComputerServicesFormComponent } from './computer-services-form/computer
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTableModule } from '@angular/material/table';
 import { StandardFeesComponent } from './standard-fees/standard-fees.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,7 @@ import { StandardFeesComponent } from './standard-fees/standard-fees.component';
     HomeComponent,
     ComputerServicesFormComponent,
     StandardFeesComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,8 +48,9 @@ import { StandardFeesComponent } from './standard-fees/standard-fees.component';
     MatCheckboxModule,
     ReactiveFormsModule,
     MatTableModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

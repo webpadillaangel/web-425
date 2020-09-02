@@ -1,0 +1,39 @@
+<div fxFlex fxLayoutAlign="center" fxFlexFill class="sign-in-container">
+  <div fxFlex="50" fxLayout="column">
+    <mat-card class="mat-elevation-z8 sign-in-container">
+      <mat-card-title> Employee Sign In </mat-card-title>
+      <mat-card-content>
+        <div *ngIf="errorMessage" class="error-message">
+          <div>
+            <span class="material-icons">
+              error_outline
+            </span> {{ errorMessage }}
+          </div>
+        </div>
+        <mat-card class="mat-elevation-z0" fxLayout="column" fxLayoutGap="10px">
+          <form
+            [formGroup]="signInForm"
+            (ngSubmit)="onSignIn(); signInForm.reset()"
+          >
+            <mat-card-content>
+              <mat-form-field fxFlex appearance="outline" color="accent">
+                <mat-label>Please enter an Employee ID</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  formControlName="employeeId"
+                  name="employeeId"
+                />
+              </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions>
+              <button type="submit" fxFlex mat-raised-button color="primary">
+                Submit
+              </button>
+            </mat-card-actions>
+          </form>
+        </mat-card>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

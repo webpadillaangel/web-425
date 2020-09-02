@@ -6,6 +6,8 @@
     <div style="width: 80%">
       <div fxLayout="row wrap" fxLayoutAlign="end start">
         <button mat-button routerLink="/">Home</button>
+        <button mat-button routerLink="/sign-in" *ngIf="!isAuthenticated">Sign In</button>
+        <button mat-button *ngIf="isAuthenticated;" (click)="onSignOut()">Sign Out</button>
       </div>
     </div>
   </mat-toolbar-row>
@@ -19,10 +21,12 @@
       <mat-card-title>{{ title }}</mat-card-title>
       <br /><br />
       <mat-card-content>
-          <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
       </mat-card-content>
-      <mat-card-actions>
-          <button mat-raised-button color="accent">Calculate</button>
+      <mat-card-actions fxLayoutAlign="flex-end">
+        <div>
+          <button mat-raised-button color="accent">Submit</button>
+        </div>
       </mat-card-actions>
     </mat-card>
   </div>

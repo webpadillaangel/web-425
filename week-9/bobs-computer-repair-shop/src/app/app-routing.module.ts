@@ -3,6 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { BaseLayoutComponent } from './base-layout/base-layout.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,10 @@ const routes: Routes = [
     component: BaseLayoutComponent,
     children: [{ path: '', component: HomeComponent }],
   },
+  {
+    path: 'sign-in',
+    component: SignInComponent
+  }
 ];
 
 @NgModule({

@@ -1,4 +1,3 @@
-import { RepairServices } from './../base-layout/repair-services.model';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComputerServicesFormComponent implements OnInit {
   repairForm: FormGroup;
+
   servicesList = [
     { serviceName: 'Password Reset', price: 39.99 },
     { serviceName: 'Spyware Removal', price: 99.99 },
@@ -36,8 +36,6 @@ export class ComputerServicesFormComponent implements OnInit {
       this.repairFormArray.push(new FormControl(false))
     );
   }
-
-  displayedColumns: string[] = ['Service', 'Price'];
 
   ngOnInit(): void {}
 

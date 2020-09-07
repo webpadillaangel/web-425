@@ -1,0 +1,45 @@
+<mat-card>
+  <mat-card-title class="services-title"> Invoice Summary </mat-card-title>
+
+  <mat-card-content>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="summary-section">
+        <mat-list fxLayout="row" *ngFor="let item of servicesList">
+          <mat-list-item class="material-item">
+            <div fxFlex fxFlexFill>
+              <mat-label>{{ item.serviceName }}</mat-label>
+            </div>
+          </mat-list-item>
+        </mat-list>
+        <mat-list fxLayout="row">
+          <mat-list-item class="material-item">
+            <div fxFlex fxFlexFill>
+              <mat-label class="total-section"> </mat-label>
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <div class="summary-section cost-section">
+        <mat-list fxLayout="row" *ngFor="let item of servicesList">
+          <mat-list-item class="material-item">
+            <div fxFlex fxFlexFill>
+              {{ item.price | currency }}
+            </div>
+          </mat-list-item>
+        </mat-list>
+        <mat-list fxLayout="row">
+          <mat-list-item class="material-item">
+            <div fxFlex fxFlexFill>
+              <mat-label class="total-section">Total </mat-label>
+              {{ servicesSum | currency }}
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+    <mat-card-actions fxLayoutAlign="flex-end">
+      <button mat-raised-button color="primary">Print</button>
+      <button mat-raised-button color="accent">Dismiss</button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

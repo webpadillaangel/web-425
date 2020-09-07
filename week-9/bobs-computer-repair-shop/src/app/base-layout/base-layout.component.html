@@ -3,11 +3,15 @@
     <div class="logo">
       <img src="../../assets/logo.png" height="140" />
     </div>
-    <div style="width: 80%">
+    <div style="width: 100%">
       <div fxLayout="row wrap" fxLayoutAlign="end start">
         <button mat-button routerLink="/">Home</button>
-        <button mat-button routerLink="/sign-in" *ngIf="!isAuthenticated">Sign In</button>
-        <button mat-button *ngIf="isAuthenticated;" (click)="onSignOut()">Sign Out</button>
+        <button mat-button routerLink="/sign-in" *ngIf="!isAuthenticated">
+          Sign In
+        </button>
+        <button mat-button *ngIf="isAuthenticated" (click)="onSignOut()">
+          Sign Out
+        </button>
       </div>
     </div>
   </mat-toolbar-row>
@@ -15,19 +19,4 @@
 
 <br />
 
-<div fxLayout="row wrap">
-  <div fxFlex>
-    <mat-card class="main-container">
-      <mat-card-title>{{ title }}</mat-card-title>
-      <br /><br />
-      <mat-card-content>
-        <router-outlet></router-outlet>
-      </mat-card-content>
-      <mat-card-actions fxLayoutAlign="flex-end">
-        <div>
-          <button mat-raised-button color="accent">Submit</button>
-        </div>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-</div>
+<router-outlet></router-outlet>

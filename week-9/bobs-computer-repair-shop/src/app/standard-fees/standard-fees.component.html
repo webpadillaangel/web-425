@@ -1,24 +1,38 @@
-<mat-card>
-  <mat-card-title class="services-title"> Additional Fees </mat-card-title>
-  <mat-card-subtitle *ngIf="!isAuthenticated">
-    Employees please sign in add additional Fees
+<mat-card [ngClass]="{ overlay: !isAuthenticated }">
+  <mat-card-title class="fees-title"> Additional Fees </mat-card-title>
+  <mat-card-subtitle class="fees-sub-title" *ngIf="!isAuthenticated">
+    Employees please sign in to add additional Fees
   </mat-card-subtitle>
 
   <mat-card-content>
-    <form fxLayout="row">
-      <div class="standard-services-section" fxFlexFill>
+    <form [formGroup]="additionalFeesForm" fxLayout="row">
+      <div class="fees-services-section" fxFlexFill>
         <div>
           <mat-form-field color="accent" appearance="standard">
-            <mat-label>Enter Parts Cost: </mat-label>
-            <input type="number" matInput placeholder="" value="" [disabled]="!isAuthenticated"/>
+            <mat-label for="partsCost">Enter Parts Cost: </mat-label>
+            <input
+              formControlName="partsCost"
+              name="partsCost"
+              matInput
+              placeholder=""
+              value=""
+              (blur)="onFormChange()"
+            />
             <span matPrefix>$&nbsp;</span>
           </mat-form-field>
         </div>
         <div>
           <div fxFlex fxFlexFill fxLayoutAlign="space-between center">
             <mat-form-field color="accent" appearance="standard">
-              <mat-label>Enter Hours: </mat-label>
-              <input type="number" matInput placeholder="" value="" [disabled]="!isAuthenticated"/>
+              <mat-label for="hours">Enter Hours: </mat-label>
+              <input
+                formControlName="hours"
+                name="hours"
+                matInput
+                placeholder=""
+                value=""
+                (blur)="onFormChange()"
+              />
             </mat-form-field>
             <div><span class="material-icons"> clear </span></div>
             <div>$50.00</div>

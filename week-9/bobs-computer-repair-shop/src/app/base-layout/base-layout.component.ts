@@ -8,7 +8,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./base-layout.component.scss'],
 })
 export class BaseLayoutComponent implements OnInit {
-  title: string = "Bob's Computer Repair Shop";
 
   constructor(private auth: AuthService, private _snackBar: MatSnackBar) {}
 

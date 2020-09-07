@@ -1,3 +1,4 @@
+import { MatDialogModule } from '@angular/material/dialog';
 import { AuthService } from './auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -22,6 +23,7 @@ import { MatTableModule } from '@angular/material/table';
 import { StandardFeesComponent } from './standard-fees/standard-fees.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ServicesModalComponent } from './services-modal/services-modal.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ComputerServicesFormComponent,
     StandardFeesComponent,
     SignInComponent,
+    ServicesModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatCheckboxModule,
     ReactiveFormsModule,
     MatTableModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

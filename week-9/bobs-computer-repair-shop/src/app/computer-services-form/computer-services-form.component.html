@@ -4,7 +4,7 @@
   </mat-card-title>
 
   <mat-card-content>
-    <form fxLayout="row" [formGroup]="repairForm" >
+    <form fxLayout="row" [formGroup]="repairForm">
       <div class="repair-services-section" fxFlexFill>
         <mat-list
           formArrayName="repairOptions"
@@ -13,33 +13,26 @@
           <mat-list-item class="material-item">
             <div fxFlex fxFlexFill fxLayoutAlign="space-between center">
               <div>
-                <mat-label>
-                  <mat-checkbox
-                    [formControlName]="i"
-                    color="accent"
-                  ></mat-checkbox>
-                  {{ servicesList[i].serviceName }}
-                </mat-label>
+                <mat-checkbox
+                  [checked]="servicesList[i].checked"
+                  [formControlName]="i"
+                  color="accent"
+                  class="check-box"
+                  (change)="onServiceChange($event, i, item)"
+                  >
+                    {{ servicesList[i].serviceName }}
+                  </mat-checkbox
+                >
               </div>
 
               <div>
                 {{ servicesList[i].price | currency }}
               </div>
-
             </div>
-
           </mat-list-item>
 
-          <mat-divider></mat-divider>
-
+          <mat-divider *ngIf="i != 6"></mat-divider>
         </mat-list>
-        <!-- <mat-label
-              formArrayName="repairOptions"
-              *ngFor="let item of repairFormArray.controls; let i = index"
-            >
-              <mat-checkbox [formControlName]="i" color="primary"></mat-checkbox>
-              {{ servicesList[i].serviceName }}
-            </mat-label> -->
       </div>
     </form>
   </mat-card-content>

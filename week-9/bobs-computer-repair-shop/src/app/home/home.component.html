@@ -1,11 +1,52 @@
-<div fxFlex fxLayoutGap="15px">
-  <div fxFlex="50">
-    <!-- Computer Services Form - Always visible and Functional -->
-    <app-computer-services-form></app-computer-services-form>
-  </div>
+<div fxLayout="row wrap" class="main-container">
+  <div fxFlex>
+    <mat-card class="main-container">
+      <mat-card-title>{{ title }}</mat-card-title>
+      <br /><br />
+      <mat-card-content>
+        <div fxFlex fxLayoutGap="20px" class="services-container">
+          <div fxFlex="50">
+            <!-- Error Container for Services Group -->
+            <div class="error-container" *ngIf="servicesError">
+              <mat-card>
+                <mat-card-content>
+                  <span class="material-icons accent"> error_outline </span>
+                  {{ servicesError }}</mat-card-content
+                >
+              </mat-card>
+            </div>
 
-  <div fxFlex="50">
-    <!-- Standard Fees Form - only editable by employee -->
-    <app-standard-fees></app-standard-fees>
+            <!-- Computer Services Form - Always visible and Functional -->
+            <app-computer-services-form
+              (servicesEmitter)="updateServicesSelected($event)"
+            ></app-computer-services-form>
+          </div>
+
+          <div fxFlex="50">
+            <!-- Error Container for Fees Group -->
+            <div class="error-container" *ngIf="feesError">
+              <mat-card>
+                <mat-card-content>
+                  <span class="material-icons accent"> error_outline </span>
+                  {{ feesError }}</mat-card-content
+                >
+              </mat-card>
+            </div>
+
+            <!-- Standard Fees Form - only editable by employee -->
+            <app-standard-fees
+              (standardFeesEmitter)="onAdditionalFeesAdded($event)"
+            ></app-standard-fees>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions fxLayoutAlign="flex-end" class="actions-container">
+        <div>
+          <button mat-raised-button color="accent" (click)="showSummary()" [disabled]=isDisabled>
+            Submit
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
   </div>
 </div>

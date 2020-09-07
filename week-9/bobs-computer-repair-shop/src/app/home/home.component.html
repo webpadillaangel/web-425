@@ -1,7 +1,10 @@
 <div fxLayout="row wrap" class="main-container">
   <div fxFlex>
     <mat-card class="main-container">
-      <mat-card-title>{{ title }}</mat-card-title>
+      <mat-card-title
+        >{{ title }}
+        <span class="material-icons"> medical_services </span></mat-card-title
+      >
       <br /><br />
       <mat-card-content>
         <div fxFlex fxLayoutGap="20px" class="services-container">
@@ -24,7 +27,7 @@
 
           <div fxFlex="50">
             <!-- Error Container for Fees Group -->
-            <div class="error-container" *ngIf="feesError">
+            <div class="error-container" *ngIf="feesError.length > 0">
               <mat-card>
                 <mat-card-content>
                   <span class="material-icons accent"> error_outline </span>
@@ -42,7 +45,12 @@
       </mat-card-content>
       <mat-card-actions fxLayoutAlign="flex-end" class="actions-container">
         <div>
-          <button mat-raised-button color="accent" (click)="showSummary()" [disabled]=isDisabled>
+          <button
+            mat-raised-button
+            color="accent"
+            (click)="showSummary()"
+            [disabled]="isDisabled || servicesList.length <= 0"
+          >
             Submit
           </button>
         </div>

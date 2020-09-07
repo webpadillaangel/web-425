@@ -1,3 +1,13 @@
+/*
+============================================
+; Title: standard-fees.component.ts
+; Author: Angel Padilla
+; Date: 06 Sept 2020
+; Modified By:
+; Description: this component is disabled unless authenticated (signed in). Values are checked here and if isNaN we default 0.
+;===========================================
+*/
+
 import { IStandardFees } from './../standard-fees.interface';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { AuthService } from './../auth.service';
@@ -39,8 +49,14 @@ export class StandardFeesComponent implements OnInit {
   getFormValues() {
     const formValues = this.additionalFeesForm.value;
     // Getting the values of the form and if their non numerical value defaulting a value of 0;
-    const partsCost = formValues.partsCost && !isNaN(formValues.partsCost) ? parseInt(formValues.partsCost) : 0;
-    const hours = formValues.hours && !isNaN(formValues.hours) ? parseInt(formValues.hours) : 0;
+    const partsCost =
+      formValues.partsCost && !isNaN(formValues.partsCost)
+        ? parseInt(formValues.partsCost)
+        : 0;
+    const hours =
+      formValues.hours && !isNaN(formValues.hours)
+        ? parseInt(formValues.hours)
+        : 0;
     var fees: IStandardFees = { partCost: partsCost, hours: hours };
     return fees;
   }

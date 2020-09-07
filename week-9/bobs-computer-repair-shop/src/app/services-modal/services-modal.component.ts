@@ -1,3 +1,13 @@
+/*
+============================================
+; Title: services-modal.component.ts
+; Author: Angel Padilla
+; Date: 06 Sept 2020
+; Modified By:
+; Description: This modal renders the sum total and displays all the items selected.
+;===========================================
+*/
+
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { IServicesList } from '../services-list.interface';
@@ -26,6 +36,7 @@ export class ServicesModalComponent implements OnInit {
     this.sumGrandTotal(this.servicesSum, this.feesSum);
   }
 
+  // sums up all the items passed in from the home component
   sumServicesList(servicesList) {
     let sum = 0;
     servicesList.forEach((element) => {
@@ -35,6 +46,7 @@ export class ServicesModalComponent implements OnInit {
     this.servicesSum = sum;
   }
 
+  // sums up the additional fees passed in.
   sumAdditionalServices(additionalServices) {
     let sum = 0;
     let partCost =
@@ -56,6 +68,7 @@ export class ServicesModalComponent implements OnInit {
     this.feesSum = sum;
   }
 
+  // sums up everything by adding the services and additional fees
   sumGrandTotal(servicesSum, feesSum) {
     this.grandTotal = servicesSum + feesSum;
   }

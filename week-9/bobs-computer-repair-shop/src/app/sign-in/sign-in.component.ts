@@ -1,3 +1,13 @@
+/*
+============================================
+; Title: sign-in.component.ts
+; Author: Angel Padilla
+; Date: 06 Sept 2020
+; Modified By:
+; Description: sign in component - employee ids to use: [123456, 245678, 345678, 456789, 567890]
+;===========================================
+*/
+
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';

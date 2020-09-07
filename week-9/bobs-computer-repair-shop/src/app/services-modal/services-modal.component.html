@@ -11,6 +11,18 @@
             </div>
           </mat-list-item>
         </mat-list>
+
+        <div *ngIf="(additionalServices.partCost > 0 || additionalServices.hours > 0)" >
+          <mat-list fxLayout="row" *ngFor="let item of additionalServices | keyvalue">
+            <mat-list-item class="material-item">
+              <div fxFlex fxFlexFill>
+                <mat-label>{{ item.key === 'hours' ? + 'Hours @ $50.00' : 'Parts Cost' }}</mat-label>
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+
+
         <mat-list fxLayout="row">
           <mat-list-item class="material-item">
             <div fxFlex fxFlexFill>
@@ -27,11 +39,22 @@
             </div>
           </mat-list-item>
         </mat-list>
+
+        <div *ngIf="additionalServices.partCost > 0 || additionalServices.hours > 0">
+          <mat-list fxLayout="row"  *ngFor="let item of additionalServices | keyvalue">
+            <mat-list-item class="material-item">
+              <div fxFlex fxFlexFill>
+                <mat-label>{{ item.value | currency }}</mat-label>
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+
         <mat-list fxLayout="row">
           <mat-list-item class="material-item">
             <div fxFlex fxFlexFill>
               <mat-label class="total-section">Total </mat-label>
-              {{ servicesSum | currency }}
+              {{ grandTotal | currency }}
             </div>
           </mat-list-item>
         </mat-list>

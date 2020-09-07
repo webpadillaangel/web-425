@@ -1,3 +1,13 @@
+/*
+============================================
+; Title: base-layout.component.ts
+; Author: Angel Padilla
+; Date: 06 Sept 2020
+; Modified By:
+; Description: Base layout component functions as the root and routes to where needed
+;===========================================
+*/
+
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';

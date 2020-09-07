@@ -1,3 +1,13 @@
+/*
+============================================
+; Title: auth.service.ts
+; Author: Angel Padilla
+; Date: 06 Sept 2020
+; Modified By:
+; Description: auth service that authenticates if user is an employee.
+;===========================================
+*/
+
 import { Injectable } from '@angular/core';
 
 @Injectable({

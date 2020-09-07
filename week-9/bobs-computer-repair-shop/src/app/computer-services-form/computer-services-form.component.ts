@@ -1,3 +1,13 @@
+/*
+============================================
+; Title: computer-services-form.component.ts
+; Author: Angel Padilla
+; Date: 06 Sept 2020
+; Modified By:
+; Description: This component holds the checkbox list and emits the values up to the home component.
+;===========================================
+*/
+
 import { IServicesList } from './../services-list.interface';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';

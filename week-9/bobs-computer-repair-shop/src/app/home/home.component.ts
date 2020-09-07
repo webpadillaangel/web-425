@@ -1,9 +1,18 @@
+/*
+============================================
+; Title: home.component.ts
+; Author: Angel Padilla
+; Date: 06 Sept 2020
+; Modified By:
+; Description: this component holds the services component and the additional fees component. Authenticates to allow usability for the additional fees side if user is an employee
+;===========================================
+*/
+
 import { AuthService } from './../auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ServicesModalComponent } from './../services-modal/services-modal.component';
 import { IStandardFees } from './../standard-fees.interface';
 import { IServicesList } from './../services-list.interface';
-import { FormGroup, FormArray } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -16,15 +25,15 @@ export class HomeComponent implements OnInit {
   servicesList: IServicesList[] = [];
   additionalFees: IStandardFees;
   servicesError: string;
-  feesError: string;
+  feesError: string = '';
   isDisabled: boolean = true;
   get isAuthenticated() {
     return this.auth.isSignedIn;
   }
 
   constructor(private auth: AuthService, private dialog: MatDialog) {
-    if(!this.isAuthenticated){
-      this.additionalFees = {partCost: 0, hours: 0};
+    if (!this.isAuthenticated) {
+      this.additionalFees = { partCost: 0, hours: 0 };
     }
   }
 
@@ -32,7 +41,7 @@ export class HomeComponent implements OnInit {
 
   updateServicesSelected(selectedServices: IServicesList[]) {
     this.servicesList = selectedServices;
-    this.isDisabled = false;
+    this.isDisabled = false; // enabling the submit button once something gets checked.
     if (this.servicesList.length) {
       this.servicesError = '';
     } else {
@@ -42,7 +51,7 @@ export class HomeComponent implements OnInit {
 
   onAdditionalFeesAdded(feesData: IStandardFees) {
     this.additionalFees = feesData;
-    this.isDisabled = false;
+    // this is a failsafe for anything that comes in and isn't a number. by default if something isn't a number it will default to zero
     if (
       isNaN(this.additionalFees.hours) ||
       isNaN(this.additionalFees.partCost)

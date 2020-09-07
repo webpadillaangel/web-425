@@ -73,5 +73,9 @@ export class ServicesModalComponent implements OnInit {
     this.grandTotal = servicesSum + feesSum;
   }
 
+  onDismiss() {
+    this.dialogRef.close();
+  }
+
   ngOnInit(): void {}
 }

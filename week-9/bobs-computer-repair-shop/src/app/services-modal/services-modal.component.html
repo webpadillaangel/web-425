@@ -12,16 +12,24 @@
           </mat-list-item>
         </mat-list>
 
-        <div *ngIf="(additionalServices.partCost > 0 || additionalServices.hours > 0)" >
-          <mat-list fxLayout="row" *ngFor="let item of additionalServices | keyvalue">
+        <div
+          *ngIf="
+            additionalServices.partCost > 0 || additionalServices.hours > 0
+          "
+        >
+          <mat-list
+            fxLayout="row"
+            *ngFor="let item of additionalServices | keyvalue"
+          >
             <mat-list-item class="material-item">
               <div fxFlex fxFlexFill>
-                <mat-label>{{ item.key === 'hours' ? + 'Hours @ $50.00' : 'Parts Cost' }}</mat-label>
+                <mat-label>{{
+                  item.key === "hours" ? +"Hours @ $50.00" : "Parts Cost"
+                }}</mat-label>
               </div>
             </mat-list-item>
           </mat-list>
         </div>
-
 
         <mat-list fxLayout="row">
           <mat-list-item class="material-item">
@@ -40,8 +48,15 @@
           </mat-list-item>
         </mat-list>
 
-        <div *ngIf="additionalServices.partCost > 0 || additionalServices.hours > 0">
-          <mat-list fxLayout="row"  *ngFor="let item of additionalServices | keyvalue">
+        <div
+          *ngIf="
+            additionalServices.partCost > 0 || additionalServices.hours > 0
+          "
+        >
+          <mat-list
+            fxLayout="row"
+            *ngFor="let item of additionalServices | keyvalue"
+          >
             <mat-list-item class="material-item">
               <div fxFlex fxFlexFill>
                 <mat-label>{{ item.value | currency }}</mat-label>
@@ -61,8 +76,12 @@
       </div>
     </div>
     <mat-card-actions fxLayoutAlign="flex-end">
-      <button mat-raised-button color="primary">Print</button>
-      <button mat-raised-button color="accent">Dismiss</button>
+      <button mat-raised-button color="accent" (click)="onDismiss()">
+        Dismiss
+      </button>
+      <button mat-raised-button color="primary" [mat-dialog-close]="'confirm'">
+        Confirm
+      </button>
     </mat-card-actions>
   </mat-card-content>
 </mat-card>

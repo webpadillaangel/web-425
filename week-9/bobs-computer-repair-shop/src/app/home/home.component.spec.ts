@@ -22,4 +22,11 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // title test
+  it(`should have a title of 'Bob's Computer Shop'`, async(()=> {
+    fixture = TestBed.createComponent(HomeComponent);
+    component = fixture.debugElement.componentInstance;
+    expect(component.title).toEqual("Bob's Computer Repair Shop");
+  }))
 });

@@ -14,6 +14,8 @@ import { ServicesModalComponent } from './../services-modal/services-modal.compo
 import { IStandardFees } from './../standard-fees.interface';
 import { IServicesList } from './../services-list.interface';
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -31,7 +33,7 @@ export class HomeComponent implements OnInit {
     return this.auth.isSignedIn;
   }
 
-  constructor(private auth: AuthService, private dialog: MatDialog) {
+  constructor(private auth: AuthService, private dialog: MatDialog, private _snackBar: MatSnackBar, private router: Router,) {
     if (!this.isAuthenticated) {
       this.additionalFees = { partCost: 0, hours: 0 };
     }
@@ -74,10 +76,14 @@ export class HomeComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      if (result === 'confirm') {
-        console.log('inside confirm');
-      } else {
-        console.log('outside confirm');
+      if(result === 'confirm'){
+        this._snackBar.open('Submitted', 'Successful!', {
+          duration: 5000,
+        });
+      }else{
+        this._snackBar.open('Canceled', 'Successful!', {
+          duration: 5000,
+        });
       }
     });
   }

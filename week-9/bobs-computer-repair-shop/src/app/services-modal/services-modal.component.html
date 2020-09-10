@@ -59,7 +59,12 @@
           >
             <mat-list-item class="material-item">
               <div fxFlex fxFlexFill>
-                <mat-label>{{ item.value | currency }}</mat-label>
+                <mat-label>
+                  {{
+                    (item.key === "hours" ? item.value * 50 : item.value)
+                      | currency
+                  }}
+                </mat-label>
               </div>
             </mat-list-item>
           </mat-list>

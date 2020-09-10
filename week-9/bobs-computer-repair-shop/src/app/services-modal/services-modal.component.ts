@@ -61,8 +61,12 @@ export class ServicesModalComponent implements OnInit {
     if (partCost > 0) {
       sum = additionalServices.partCost;
     }
-    if (hours > 0) {
-      sum = sum + additionalServices.hours * 50;
+    if (hours > 1) {
+      let multiply = additionalServices.hours * 50;
+      sum = sum + multiply
+    }
+    if (hours <= 1) {
+      sum = sum + 50;
     }
 
     this.feesSum = sum;

@@ -1,6 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BaseLayoutComponent } from './base-layout.component';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+
 
 describe('BaseLayoutComponent', () => {
   let component: BaseLayoutComponent;
@@ -8,18 +10,19 @@ describe('BaseLayoutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BaseLayoutComponent ]
-    })
-    .compileComponents();
+      imports: [
+        RouterTestingModule, MatSnackBarModule
+      ],
+      declarations: [
+        BaseLayoutComponent
+      ],
+    }).compileComponents();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(BaseLayoutComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(BaseLayoutComponent);
+    const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
+
 });

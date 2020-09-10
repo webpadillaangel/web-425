@@ -1,16 +1,19 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
 
-import { AuthServiceService } from './auth.service';
+import { AuthService } from './auth.service';
 
 describe('AuthServiceService', () => {
-  let service: AuthServiceService;
+  let service: AuthService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(AuthServiceService);
+    TestBed.configureTestingModule({
+      providers: [AuthService],
+    });
+    service = TestBed.inject(AuthService);
   });
 
-  it('should be created', () => {
+  // create the service as service component unit test
+  it('should be created', inject([AuthService], (service: AuthService) => {
     expect(service).toBeTruthy();
-  });
+  }));
 });
